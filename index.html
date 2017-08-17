@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ImgProxy URL generator</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="app.css">
+
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2" id="form-block">
+
+        <h1>ImgProxy URL generator</h1>
+
+        <form action="#" class="form">
+          <div class="form-group">
+            <label for="url">Remote image URL*</label>
+            <input type="text" id="url" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="proxy_url">ImgProxy host URL*</label>
+            <input type="text" id="proxy_url" class="form-control">
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="key">ImgProxy Key*</label>
+                <input type="text" id="key" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="salt">ImgProxy Salt*</label>
+                <input type="text" id="salt" class="form-control">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="height">Height*</label>
+                <input type="text" id="height" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="width">Width*</label>
+                <input type="text" id="width" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="resize">Resize</label>
+                <select class="form-control" id="resize">
+                  <option>fit</option>
+                  <option>fill</option>
+                  <option>crop</option>
+                  <option>force</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="gravity">Gravity</label>
+                <select class="form-control" id="gravity">
+                  <option>no</option>
+                  <option>so</option>
+                  <option>ea</option>
+                  <option>we</option>
+                  <option>ce</option>
+                  <option>sm</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="extension">Extension</label>
+                <select class="form-control" id="extension">
+                  <option>jpg</option>
+                  <option>png</option>
+                  <option>webp</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group form-inline">
+                <label for="enlarge">Enlarge</label>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="" id="enlarge">
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-3">
+              <input type="submit" id="submit" class="btn btn-primary btn-lg" value="Generate URL">
+            </div>
+            <div class="form-group col-md-9">
+              <div class="input-group">
+                <input type="text" class="form-control input-lg" id="result" placeholder="Result">
+                <div class="input-group-addon">
+                  <a href="#" class="copy" data-clipboard-target="#result">
+                    <img class="clippy" src="clippy.svg" width="20" alt="Copy to clipboard">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <div id="info">
+          <p><strong>Before using this form:</strong></p>
+          <p>
+            Make your instance of ImgProxy available at a public URL
+            by following the instructions
+            <a href="https://github.com/DarthSim/imgproxy">here</a>
+            (you can deploy on Heroku with one click).
+            Note down your IMGPROXY_KEY and IMGPROXY_KEY.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/lib/sha256.js"></script>
+  <script type="text/javascript" src="/lib/clipboard.min.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
