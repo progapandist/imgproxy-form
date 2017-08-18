@@ -42,7 +42,7 @@ $(function () {
       }
     })
     var proxyUrl = generateProxyUrl(formValues)
-    $('#result').val(proxyUrl.replace(/\/\//, "/"))
+    $('#result').val(proxyUrl)
     formValues = {}
   })
 })
