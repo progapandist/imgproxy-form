@@ -30,8 +30,11 @@ $(function () {
     e.preventDefault()
     $('input, select').each(function () {
       var inputName = $(this).attr('id')
-      if (inputName !== 'submit' && inputName !== 'enlarge') {
+      if (inputName !== 'submit' && inputName !== 'enlarge' && inputName !== 'proxy_url' ) {
         formValues[inputName] = $(this).val()
+      }
+      if (inputName == 'proxy_url') {
+        formValues[inputName] = $(this).val().replace(/\/$/, '')
       }
       if (inputName == 'enlarge') {
         if  ($(this).is(':checked')) {
